@@ -177,5 +177,5 @@ The build output is a single file at `dist/index.html` — open it directly in a
 
 ---
 
-*Built with ❤️ using React 18, TypeScript, and Vite.*
+*Developed by Juan Torres Gómez using React 18, TypeScript, and Vite. Enjoy the game!*
 
