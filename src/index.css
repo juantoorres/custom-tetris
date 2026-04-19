@@ -61,11 +61,13 @@ h1 {
   width:           340px;
 }
 .setup-screen h2 {
-  font-size:       1.1rem;
-  letter-spacing:  2px;
-  color:           var(--accent-2);
+  font-size:       1.4rem;
+  font-weight:     700;
+  letter-spacing:  3px;
+  color:           var(--text);
   text-transform:  uppercase;
   font-family:     var(--font-heading);
+  text-shadow:     var(--glow);
 }
 .option-group {
   display:         flex;
@@ -74,10 +76,11 @@ h1 {
   width:           100%;
 }
 .option-group > label {
-  font-size:       0.82rem;
-  color:           var(--text-muted);
+  font-size:       0.9rem;
+  font-weight:     600;
+  color:           var(--text);
   text-transform:  uppercase;
-  letter-spacing:  1px;
+  letter-spacing:  1.5px;
 }
 .btn-row { display: flex; gap: 8px; flex-wrap: wrap; }
 
@@ -85,12 +88,13 @@ h1 {
 .opt-btn {
   flex:            1;
   padding:         8px 4px;
-  border:          1px solid var(--text-muted);
+  border:          1px solid color-mix(in srgb, var(--text) 35%, transparent);
   border-radius:   6px;
   background:      var(--surface);
-  color:           var(--text-muted);
+  color:           var(--text);
   cursor:          pointer;
-  font-size:       0.88rem;
+  font-size:       0.9rem;
+  font-weight:     500;
   font-family:     var(--font-family);
   transition:      background 0.15s, border-color 0.15s, color 0.15s;
 }

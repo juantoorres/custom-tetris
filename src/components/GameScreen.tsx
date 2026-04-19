@@ -8,6 +8,7 @@ import type { GameActions } from '../hooks/useGameEngine';
 interface Props {
   state: GameState;
   actions: GameActions;
+  onBackToMenu: () => void;
 }
 
 function formatTime(ms: number): string {
@@ -19,7 +20,7 @@ function formatTime(ms: number): string {
   return `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
 }
 
-export function GameScreen({ state, actions }: Props) {
+export function GameScreen({ state, actions, onBackToMenu }: Props) {
   const { theme } = useTheme();
   const modeLbl   = state.mode === 'inverted' ? 'Inverted ↑' : 'Normal ↓';
 
@@ -81,16 +82,15 @@ export function GameScreen({ state, actions }: Props) {
         <span>P</span> Pause
       </div>
 
-      {state.phase === 'paused' && (
-        <p style={{ color: 'var(--accent)', marginTop: 8, letterSpacing: 2 }}>
-          — PAUSED — press P to resume
-        </p>
-      )}
-
       <div style={{ marginTop: 8, display: 'flex', gap: 8 }}>
         <button className="opt-btn" onClick={actions.togglePause} style={{ padding: '6px 14px' }}>
           {state.phase === 'paused' ? 'Resume' : 'Pause'}
         </button>
+        {state.phase === 'paused' && (
+          <button className="opt-btn" onClick={onBackToMenu} style={{ padding: '6px 14px' }}>
+            ← Menu
+          </button>
+        )}
       </div>
     </section>
   );

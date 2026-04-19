@@ -54,12 +54,12 @@ export default function App() {
       )}
 
       {(state.phase === 'playing' || state.phase === 'paused') && (
-        <GameScreen state={state} actions={actions} />
+        <GameScreen state={state} actions={actions} onBackToMenu={handleBackToMenu} />
       )}
 
       {state.phase === 'over' && (
         <>
-          <GameScreen state={state} actions={actions} />
+          <GameScreen state={state} actions={actions} onBackToMenu={handleBackToMenu} />
           <Overlay
             score={state.score}
             lines={state.lines}
